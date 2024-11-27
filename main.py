@@ -1,5 +1,8 @@
 import pandas as pd
 import streamlit as st
+from io import BytesIO
+import csv
+
 
 # Function to generate the amortization table
 def amortization_table(principal, annual_rate, years):
@@ -53,9 +56,8 @@ def main():
 
         # Display detailed amortization table
         st.subheader("Amortization Table")
-        # Convert the DataFrame to an HTML table without the index
-        st.write(Amortization_Table.to_html(index=False), unsafe_allow_html=True)
+        st.write(Amortization_Table)
+
 
 if __name__ == "__main__":
     main()
-
